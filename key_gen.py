@@ -1,7 +1,7 @@
 import random
 import string
 
-def key_gen():
+def keyGen():
     user_key = ''
     for i in range(random.randint(9,17)):
         char = random.randint(0,51)
