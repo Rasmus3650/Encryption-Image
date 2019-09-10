@@ -14,7 +14,7 @@
    <string>Image Encryption</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="choose_file">
+   <widget class="QPushButton" name="chooseFileButton">
     <property name="geometry">
      <rect>
       <x>100</x>
@@ -46,7 +46,7 @@
      <attribute name="title">
       <string>OWN</string>
      </attribute>
-     <widget class="QPushButton" name="encrypt1">
+     <widget class="QPushButton" name="encryptOwnButton">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -62,7 +62,7 @@
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="decrypt1">
+     <widget class="QPushButton" name="decryptOwnButton">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -80,7 +80,7 @@
      <attribute name="title">
       <string>XOR</string>
      </attribute>
-     <widget class="QPushButton" name="encrypt1_2">
+     <widget class="QPushButton" name="encryptXorButton">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -96,7 +96,7 @@
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="decrypt2">
+     <widget class="QPushButton" name="decryptXorButton">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -111,7 +111,7 @@
      </widget>
     </widget>
    </widget>
-   <widget class="QPushButton" name="choose_file_2">
+   <widget class="QPushButton" name="randomizeButton">
     <property name="geometry">
      <rect>
       <x>100</x>
@@ -124,7 +124,7 @@
      <string>Randomize</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLineEdit" name="keyEdit">
     <property name="geometry">
      <rect>
       <x>40</x>
