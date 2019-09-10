@@ -9,5 +9,4 @@ def key_gen():
         user_key += user_key.join(partial_key)
     return user_key
 
-
 key_gen()
