@@ -1,9 +1,10 @@
-import random
-import string
 import sys
 import os
-from PyQt5 import QtCore, QtGui
-from PyQt5 import *
+import random
+import string
+from PyQt5 import QtCore, QtGui, QtWidgets, uic
+from PyQt5.QtWidgets import QApplication, QWidget, QInputDialog, QLineEdit, QFileDialog
+from PyQt5.QtGui import *
 from key_gen import keyGen
 from gui import Ui_MainWindow
 
