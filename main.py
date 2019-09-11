@@ -22,10 +22,10 @@ class StartGui(QtWidgets.QMainWindow, Ui_MainWindow):
         self.key = ""
         self.keyEdit.textChanged.connect(self.changetext)
         self.randomizeButton.clicked.connect(self.randomkey)
-        self.encryptOwnButton.clicked.connect(self.passd)
-        self.decryptOwnButton.clicked.connect(self.passd)
-        self.encryptXorButton.clicked.connect(self.passd)
-        self.decryptXorButton.clicked.connect(self.passd)
+        self.encryptOwnButton.clicked.connect(self.encryptown)
+        self.decryptOwnButton.clicked.connect(self.decryptown)
+        self.encryptXorButton.clicked.connect(self.encryptxor)
+        self.decryptXorButton.clicked.connect(self.decryptxor)
 
     def passd(self):
         pass
@@ -49,11 +49,23 @@ class StartGui(QtWidgets.QMainWindow, Ui_MainWindow):
                 self.imgString = strg.decode()
                 imageFile.close()
 
-    def savefile(self):
+    def encryptown(self):
+        pass
+
+    def decryptown(self):
+        pass
+
+    def encryptxor(self):
+        pass
+
+    def decryptxor(self):
+        pass
+
+    def savefile(self, encstring):
         filepath = self.imgPath.split(".")
-        with open((filepath), "rb") as imageFile:
-            strg = base64.b64encode(imageFile.read())
-            self.imgString = strg.decode()
+        encstring = base64.b64decode(encstring)
+        with open((filepath[0] + "_encoded.png"), "wb") as imageFile:
+            imageFile.write(encstring)
             imageFile.close()
 
 
