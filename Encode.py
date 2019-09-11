@@ -29,4 +29,5 @@ def encode(key, path, string):
     filename = path[:-4]+"_encoded.png"
     with open(filename, 'wb') as f:
         f.write(pic)
+    return string
 

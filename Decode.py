@@ -1,6 +1,6 @@
 import base64
 
-def funDecode(key, path, srting):
+def funDecode(key, path, string):
     liste = []
     liste2 = []
 
@@ -27,3 +27,9 @@ def funDecode(key, path, srting):
 
         string = string[:ord(key[i]) - 64 + count] + string[ord(key[i]) - 64 + 1 + count:]
         liste2.append(ord(key[i]))
+
+    filename = path[:-4] + "_decoded.png"
+    with open(filename, 'wb') as f:
+        f.write(string)
+
+    return string
