@@ -2,16 +2,18 @@
 
 # Form implementation generated from reading ui file 'ui.ui'
 #
-# Created by: PyQt5 UI code generator 5.11.3
+# Created by: PyQt5 UI code generator 5.13.0
 #
 # WARNING! All changes made in this file will be lost!
 
+
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(260, 218)
+        MainWindow.resize(259, 216)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.chooseFileButton = QtWidgets.QPushButton(self.centralwidget)
@@ -71,4 +73,3 @@ class Ui_MainWindow(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.XORtab), _translate("MainWindow", "XOR"))
         self.randomizeButton.setText(_translate("MainWindow", "Randomize"))
         self.label.setText(_translate("MainWindow", "Key:"))
-
