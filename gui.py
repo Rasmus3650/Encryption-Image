@@ -13,14 +13,16 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(259, 216)
+        MainWindow.resize(274, 216)
+        MainWindow.setMinimumSize(QtCore.QSize(274, 216))
+        MainWindow.setMaximumSize(QtCore.QSize(274, 216))
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.chooseFileButton = QtWidgets.QPushButton(self.centralwidget)
         self.chooseFileButton.setGeometry(QtCore.QRect(100, 10, 71, 17))
         self.chooseFileButton.setObjectName("chooseFileButton")
         self.tabWidget = QtWidgets.QTabWidget(self.centralwidget)
-        self.tabWidget.setGeometry(QtCore.QRect(0, 100, 261, 101))
+        self.tabWidget.setGeometry(QtCore.QRect(0, 100, 331, 101))
         self.tabWidget.setUsesScrollButtons(False)
         self.tabWidget.setObjectName("tabWidget")
         self.OWNtab = QtWidgets.QWidget()

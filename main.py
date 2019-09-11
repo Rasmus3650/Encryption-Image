@@ -15,12 +15,20 @@ class StartGui(QtWidgets.QMainWindow, Ui_MainWindow):
         QtWidgets.QMainWindow.__init__(self)
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
+        self.statusBar().setSizeGripEnabled(False)
         self.chooseFileButton.clicked.connect(self.openfile)
         self.imgString = ""
         self.imgPath = ""
         self.key = ""
         self.keyEdit.textChanged.connect(self.changetext)
         self.randomizeButton.clicked.connect(self.randomkey)
+        self.encryptOwnButton.clicked.connect(self.passd)
+        self.decryptOwnButton.clicked.connect(self.passd)
+        self.encryptXorButton.clicked.connect(self.passd)
+        self.decryptXorButton.clicked.connect(self.passd)
+
+    def passd(self):
+        pass
 
     def randomkey(self):
         self.keyEdit.setText(keyGen())
@@ -40,6 +48,13 @@ class StartGui(QtWidgets.QMainWindow, Ui_MainWindow):
                 strg = base64.b64encode(imageFile.read())
                 self.imgString = strg.decode()
                 imageFile.close()
+
+    def savefile(self):
+        filepath = self.imgPath.split(".")
+        with open((filepath), "rb") as imageFile:
+            strg = base64.b64encode(imageFile.read())
+            self.imgString = strg.decode()
+            imageFile.close()
 
 
 if __name__ == "__main__":
