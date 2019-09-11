@@ -1,25 +1,25 @@
 import base64
 
-def encode(key, path):
+def encode(key, path, string):
     test = []
     liste = []
     liste2 = []
-    with open(path, "rb") as imageFile:
-        str = base64.b64encode(imageFile.read())
-        print(len(str))
-        string = str.decode()
-        print(string)
-        test.append(string)
-        for i in range(len(key)):
-            count = 0
-            for k in liste:
-                if k < ord(key[i]):
-                    count += 1
+    #with open(path, "rb") as imageFile:
+    #    str = base64.b64encode(imageFile.read())
+    #    print(len(str))
+    #    string = str.decode()
+    print(string)
+    test.append(string)
+    for i in range(len(key)):
+        count = 0
+        for k in liste:
+            if k < ord(key[i]):
+                count += 1
 
-            string = string[:ord(key[i]) - 64 + count] + key[i] + string[ord(key[i]) - 64 + count:]
-            liste.append(ord(key[i]))
+        string = string[:ord(key[i]) - 64 + count] + key[i] + string[ord(key[i]) - 64 + count:]
+        liste.append(ord(key[i]))
 
-        print(string)
+    print(string)
 
     string = string.encode()
     print(string)

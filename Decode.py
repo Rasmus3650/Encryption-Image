@@ -1,13 +1,13 @@
 import base64
 
-def funDecode(key, path):
+def funDecode(key, path, srting):
     liste = []
     liste2 = []
 
-    with open(path, "rb") as imageFile:
-        str = base64.b64encode(imageFile.read())
-        print(len(str))
-        string = str.decode()
+    #with open(path, "rb") as imageFile:
+    #    str = base64.b64encode(imageFile.read())
+    #    print(len(str))
+    #    string = str.decode()
 
     for j in key:
         liste.append(ord(j))
