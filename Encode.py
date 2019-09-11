@@ -1,6 +1,7 @@
 import base64
 
-def encode(key, path, string):
+
+def encode(key, string):
     test = []
     liste = []
     liste2 = []
@@ -8,7 +9,7 @@ def encode(key, path, string):
     #    str = base64.b64encode(imageFile.read())
     #    print(len(str))
     #    string = str.decode()
-    print(string)
+    #print(string)
     test.append(string)
     for i in range(len(key)):
         count = 0
@@ -19,15 +20,16 @@ def encode(key, path, string):
         string = string[:ord(key[i]) - 64 + count] + key[i] + string[ord(key[i]) - 64 + count:]
         liste.append(ord(key[i]))
 
-    print(string)
+    #print(string)
 
     string = string.encode()
-    print(string)
+    #print(string)
     # print(int.from_bytes(str, "big"))
-    pic = base64.b64decode(string)
-    print(pic)
-    filename = path[:-4]+"_encoded.png"
-    with open(filename, 'wb') as f:
-        f.write(pic)
+    #pic = base64.b64decode(string)
+    #print(pic)
+    #filename = path[:-4]+"_encoded.png"
+    #with open(filename, 'wb') as f:
+    #    f.write(pic)
     return string
 
+print(encode("abDcasE", "abcdefghijklmnopqrstuvwxyz"))

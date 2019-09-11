@@ -7,6 +7,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets, uic
 from PyQt5.QtWidgets import QApplication, QWidget, QInputDialog, QLineEdit, QFileDialog
 from PyQt5.QtGui import *
 from key_gen import keyGen
+from Encode import encode
 from gui import Ui_MainWindow
 
 
@@ -35,6 +36,7 @@ class StartGui(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def changetext(self):
         self.key = self.keyEdit.text()
+        print(self.key)
 
     def openfile(self):
         options = QFileDialog.Options()
@@ -48,9 +50,11 @@ class StartGui(QtWidgets.QMainWindow, Ui_MainWindow):
                 strg = base64.b64encode(imageFile.read())
                 self.imgString = strg.decode()
                 imageFile.close()
+        print(self.imgPath)
 
     def encryptown(self):
-        pass
+        self.savefile(encode(self.key, self.imgString))
+        print("Encryptet")
 
     def decryptown(self):
         pass
@@ -74,3 +78,5 @@ if __name__ == "__main__":
     myapp = StartGui()
     myapp.show()
     sys.exit(app.exec_())
+
+# key der giver error: vHUCKciBbkc
