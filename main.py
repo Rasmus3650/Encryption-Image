@@ -55,11 +55,11 @@ class StartGui(QtWidgets.QMainWindow, Ui_MainWindow):
         print(self.imgString)
 
     def encryptown(self):
-        self.savefile(encode(self.key, self.imgString))
+        self.savefile(encode(self.key, self.imgString), True)
         print("Encrypted")
 
     def decryptown(self):
-        self.savefile(funDecode(self.key, self.imgString))
+        self.savefile(funDecode(self.key, self.imgString), False)
         print("Decrypted")
 
     def encryptxor(self):
