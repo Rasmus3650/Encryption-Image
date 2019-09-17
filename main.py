@@ -55,7 +55,9 @@ class StartGui(QtWidgets.QMainWindow, Ui_MainWindow):
         print(self.imgString)
 
     def encryptown(self):
-        self.savefile(encode(self.key, self.imgString), True)
+        placehold = encode(self.key, self.imgString) #boQMTdk
+        print(placehold)
+        self.savefile(placehold, True)
         print("Encrypted")
 
     def decryptown(self):
@@ -70,7 +72,7 @@ class StartGui(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def savefile(self, encstring, h):
         filepath = self.imgPath.split(".")
-        encstring = base64.b64decode(encstring)
+        encstring = encstring.decode()
         if h:
             with open((filepath[0] + "_encoded.png"), "wb") as imageFile:
                 imageFile.write(encstring)

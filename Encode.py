@@ -32,4 +32,4 @@ def encode(key, string):
     #    f.write(pic)
     return string
 
-print(encode("abDcasE", "abcdefghijklmnopqrstuvwxyz"))
+#print(encode("abDcasE", "abcdefghijklmnopqrstuvwxyz"))
