@@ -8,6 +8,7 @@ from PyQt5.QtWidgets import QApplication, QWidget, QInputDialog, QLineEdit, QFil
 from PyQt5.QtGui import *
 from key_gen import keyGen
 from Encode import encode
+from Decode import funDecode
 from gui import Ui_MainWindow
 
 
@@ -51,13 +52,15 @@ class StartGui(QtWidgets.QMainWindow, Ui_MainWindow):
                 self.imgString = strg.decode()
                 imageFile.close()
         print(self.imgPath)
+        print(self.imgString)
 
     def encryptown(self):
         self.savefile(encode(self.key, self.imgString))
-        print("Encryptet")
+        print("Encrypted")
 
     def decryptown(self):
-        pass
+        self.savefile(funDecode(self.key, self.imgString))
+        print("Decrypted")
 
     def encryptxor(self):
         pass
@@ -65,12 +68,17 @@ class StartGui(QtWidgets.QMainWindow, Ui_MainWindow):
     def decryptxor(self):
         pass
 
-    def savefile(self, encstring):
+    def savefile(self, encstring, h):
         filepath = self.imgPath.split(".")
         encstring = base64.b64decode(encstring)
-        with open((filepath[0] + "_encoded.png"), "wb") as imageFile:
-            imageFile.write(encstring)
-            imageFile.close()
+        if h:
+            with open((filepath[0] + "_encoded.png"), "wb") as imageFile:
+                imageFile.write(encstring)
+                imageFile.close()
+        else:
+            with open((filepath[0] + "_decoded.png"), "wb") as imageFile:
+                imageFile.write(encstring)
+                imageFile.close()
 
 
 if __name__ == "__main__":
@@ -80,3 +88,5 @@ if __name__ == "__main__":
     sys.exit(app.exec_())
 
 # key der giver error: vHUCKciBbkc
+
+# key: LrUlNewPrM
